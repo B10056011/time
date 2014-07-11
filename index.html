@@ -1,0 +1,60 @@
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=380">
+	<title>To do list with Alarms</title>
+	<!-- Icon originated from design by Sabine Wollender: http://thenounproject.com/wosamo/ -->
+	<link rel="icon" type="image/png" href="img/icon-128.png">
+    <link href='http://fonts.googleapis.com/css?family=Donegal+One|Lily+Script+One' rel='stylesheet' type='text/css'>  
+	<link href="style/style.css" type="text/css" rel="stylesheet">
+    
+	<script type="text/javascript">
+	//記錄區<div align="left"><label for="Alarmm">Alarm:</label><label><input type="radio" name="radio" id="on" value="on">On</label><label> <input  type="radio" name="radio" id="off" value="off" >Off</label> </div>  
+	//range 音量大小<div align="left"><label for="skill">音量大小:</label><input type="range" id="range" min="0" max="15" step="1"> </div>
+	
+
+	</script>
+	
+</head>
+<body>
+
+<h1>To do list</h1>
+
+<div class="task-box">
+
+<ul id="task-list">
+
+</div>
+
+</ul>
+
+<div class="form-box">
+<h2>Add new to do.</h2>
+
+
+<form id="task-form" action="index.html">
+  <div class="full-width"><label for="title">事件名稱:</label><input type="text" id="title" required></div>
+  <div align="left"><label for="date">設定日期:</label><input type="date" id="date" > </div>
+  <div align="left"><label for="start">開始時間:</label><input type="time" id="start" > </div>
+  <div align="left"><label for="end">結束時間:</label><input type="time" id="end" > </div>
+  
+  
+  <div class="third-width"><label for="alarm" >Alarm:</label>
+        <select id="alarm" required>
+          <option value="on">on</option>
+          <option value="off">off</option>
+         
+        </select></div>
+ 
+  
+ 
+  
+
+<input type=button id="btn" name=button value="Set"</input>
+<script>setInterval("show()",1000);</script>
+<script src="111.js" ></script>
+<br>
+<span id="t"></span><br>
+now：<output id="now" ></output>
+
+

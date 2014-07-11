@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Time Setting</title>
+<style>
+.accordionMenu{
+	font : 12px/20px Arial;
+	color:#424242;
+	background:#fff;
+	padding:0;
+	margin:0;
+	width:100%;  
+}	
+.accordionMenu h1{
+	font-size:20px;
+	text-shadow:2px 2px 2px #aeaeae;	
+}
+.accordionMenu h2{
+	margin:0;
+	paddion:0;	
+}
+.accordionMenu :target h2 a, 
+.accordionMenu h2 a:focus,
+.accordionMenu h2 a:hover,
+.accordionMenu h2 a:active {
+	background:#2288dd;
+	background:-moz-linear-gradient(top,#6bb2ff,#2288dd);
+	background:-webkit-gradient(linear,left top, left bottom, from(#6bb2ff), to(#2288dd));
+		 filter: progid:DXImageTransform.Microsoft.gradient
+  (startColorstr=#ff6bb2ff, endColorstr=#ff2288dd);
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient
+  (startColorstr=#ff6bb2ff, endColorstr=#ff2288dd)";
+  color:#fff;	
+}
+.accordionMenu h2 a{
+	font-size:15px;
+	display:block;  
+	font-weight:normal;
+	color:#424242;
+	text-shadow:2px 2px 2px #aeaeae;
+	text-decoration:none;
+	margin:0;
+	padding:10px;
+	background:#8f8f8f;
+	background:-moz-linear-gradient(top,#cecece,#8f8f8f);
+	background:-webkit-gradient(linear,left top, left bottom, from(#cecece), to(#8f8f8f));
+	filter: progid:DXImageTransform.Microsoft.gradient
+  (startColorstr=#ffcecece, endColorstr=#ff8f8f8f);
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient
+  (startColorstr=#ffcecece, endColorstr=#f8f8f8f)";
+	
+	
+		
+}
+
+.accordionMenu p {
+	padding:0 10px;
+	margin:0;
+	height:0;
+	overflow:hidden;
+	-moz-transition:height 0.5s ease-in;
+	-webkit-transition:height 0.5s ease-in;
+	-o-transition:hegith 0.5s ease-in;
+	tansition:height 0.5s ease-in;
+	width:280px;  	
+}
+
+.accordionMenu :target p{
+	overflow: auto;
+	height:20px;	
+}
+</style>
+</head>
+
+<body onload="load();">
+
+	
+<div class="accordionMenu">
+	<h1>列表<input type=button name=add value="新增" onclick="location='index.html'" </input></h1>
+	<div id="1" class="menuSection">
+		<script>
+			var p = document.createElement("p");
+			var h2 = document.createElement("h2");
+		    var a = document.createElement("a");
+		    var label= document.createElement("label");
+		    var label1= document.createElement("label1");
+		    var label2= document.createElement("label2");
+		    var label3= document.createElement("label3");
+		    var label4= document.createElement("label4");
+		    var button= document.createElement("button");
+		    var button1= document.createElement("button");
+		       
+		    button.id="btn";
+		    button1.id="btn1" ;
+		    //button1.onclick=location="index.html";
+		    button.innerHTML="-";
+		    button1.innerHTML="修改";
+		    label.id="ti";
+		    label1.id="date";
+		    label2.id="st";
+		    label3.id="en";
+		    label4.id="alarm";
+		    label1.innerHTML="設定日期：";
+		    label2.innerHTML="開始時間：";
+		    label3.innerHTML="結束時間：";
+		    label4.innerHTML="Alarm：";
+		    
+		    a.href="#1";
+		    a.innerHTML = "事件一：";
+		    a.appendChild(label);
+		    a.appendChild(button);
+		    
+		    h2.appendChild(a);
+		    p.appendChild(label1);
+		    h2.appendChild(p);
+		    var p = document.createElement("p");
+		    p.appendChild(label2);
+		    h2.appendChild(p);
+		    var p = document.createElement("p");
+		    p.appendChild(label3);
+		    h2.appendChild(p);
+		    var p = document.createElement("p");
+		    p.appendChild(label4);
+		    h2.appendChild(p);
+		    var p = document.createElement("p");
+		    p.appendChild(button1);
+		    //button1.onclick=location="index.html";
+		    h2.appendChild(p);
+		    var p = document.createElement("p");
+		    h2.appendChild(p);
+		    var div = document.getElementById("1");
+		    div.appendChild(h2);
+		    
+		</script>
+		
+           
+	</div>
+	<div id="2" class="menuSection">
+		<h2><a href="#2">事件二：</a></h2>
+        <p>789101112</p>
+	</div>
+	<div id="3" class="menuSection">
+		<h2><a href="#3">API</a></h2>
+        <p>13141516</p>
+	</div>
+	
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+function load () {
+	
+  if(location.search=="" )
+  	return;
+  	
+  
+ 
+  str=location.search.substring(1);           //若原為?title=123  次用法出來會變成   title=123  去掉第一個字元   
+  piece=str.split("&");
+  sentre0=piece[0].split("=");                      //同上說明  以=分開    sentre[0]=title   sentre[1]=123
+  sentre1=piece[1].split("=");
+  sentre2=piece[2].split("=");
+  sentre3=piece[3].split("=");
+  sentre4=piece[4].split("=");
+
+  document.getElementById("ti").innerHTML=sentre0[1];
+  document.getElementById("date").innerHTML=document.getElementById("date").innerHTML+sentre1[1];
+  document.getElementById("st").innerHTML=document.getElementById("st").innerHTML+sentre2[1];
+  document.getElementById("en").innerHTML=document.getElementById("en").innerHTML+sentre3[1];
+  document.getElementById("alarm").innerHTML=document.getElementById("alarm").innerHTML+sentre4[1];
+  
+}
+
+
+</script>
+
